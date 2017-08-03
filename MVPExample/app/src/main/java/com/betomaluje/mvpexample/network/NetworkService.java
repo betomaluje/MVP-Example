@@ -11,7 +11,7 @@ public class NetworkService {
 
     private static volatile NetworkService instance = null;
 
-    private static String baseUrl = "http://staging.washita.cl/api/";
+    private static String baseUrl = "http://pokeapi.co/api/v2/";
     private NetworkAPI networkAPI;
 
     private NetworkService() {
@@ -27,7 +27,7 @@ public class NetworkService {
         networkAPI = retrofit.create(NetworkAPI.class);
     }
 
-    public NetworkAPI getAPI() {
+    private NetworkAPI getAPI() {
         return networkAPI;
     }
 
@@ -36,7 +36,7 @@ public class NetworkService {
      *
      * @return the NetworkService instance
      */
-    public static NetworkService getInstance() {
+    public static NetworkAPI getInstance() {
         if (instance == null) {    // check 1
             synchronized (NetworkService.class) {
                 if (instance == null) {    // check 2
@@ -44,6 +44,6 @@ public class NetworkService {
                 }
             }
         }
-        return instance;
+        return instance.getAPI();
     }
 }

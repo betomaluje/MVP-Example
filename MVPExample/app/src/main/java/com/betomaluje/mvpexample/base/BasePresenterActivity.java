@@ -14,7 +14,7 @@ import com.squareup.otto.Bus;
 public abstract class BasePresenterActivity<T extends BasePresenter> extends BaseActivity {
 
     protected Bus bus = BusManager.getInstance();
-    protected T mPresenter;
+    private T mPresenter;
 
     @NonNull
     protected abstract T getPresenter();

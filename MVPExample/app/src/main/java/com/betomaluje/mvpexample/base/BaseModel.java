@@ -1,5 +1,6 @@
 package com.betomaluje.mvpexample.base;
 
+import com.betomaluje.mvpexample.network.NetworkAPI;
 import com.betomaluje.mvpexample.network.NetworkService;
 import com.squareup.otto.Bus;
 
@@ -10,7 +11,7 @@ import com.squareup.otto.Bus;
 public abstract class BaseModel {
 
     protected Bus bus;
-    protected NetworkService networkService;
+    protected NetworkAPI networkService;
 
     public BaseModel(Bus bus) {
         this.bus = bus;
